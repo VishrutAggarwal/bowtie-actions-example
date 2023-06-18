@@ -1,0 +1,16 @@
+{
+    "name": "Package 1",
+    "value": 100,
+    "products": [
+        {
+            "name": "Product 3",
+            "value": 30,
+            "color": "red"
+        },
+        {
+            "name": "Product 4",
+            "value": 40
+        }
+    ],
+    "color": "green"
+}
