@@ -12,8 +12,10 @@ jobs:
         uses: bowtie-json-schema/bowtie@v2023.05.12
 
       - name: Run Bowtie
-        uses: actions/checkout
         run: bowtie --version
+
+      - name: Set Path
+        uses: actions/checkout
 
       - name: Test step
         run: echo ${{github.repository}}
