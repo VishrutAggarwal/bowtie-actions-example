@@ -15,7 +15,7 @@ jobs:
         run: bowtie --version
 
       - name: Test step
-        run: echo github.repository
+        run: echo ${{github.repository}}
 
       - name: Validate Schema
-        run: bowtie validate github.repository/schema.json github.repository/instance.json
+        run: bowtie validate ${{github.repository}}/schema.json ${{github.repository}}/instance.json
