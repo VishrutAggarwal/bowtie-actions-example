@@ -17,11 +17,6 @@ jobs:
       - name: Test step
         run: echo ${{github.repository}}
 
-
-  validates-schema:
-    runs-on: ubuntu-latest
-
-    steps:
       - name: Set Path
         uses: actions/checkout
 
