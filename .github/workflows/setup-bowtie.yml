@@ -17,8 +17,6 @@ jobs:
       - name: Test step
         run: echo ${{github.repository}}
 
-      - name: Set Path
-        uses: actions/checkout
-
+      - uses: actions/checkout
       - name: Validate Schema
         run: bowtie validate schema.json instance.json
