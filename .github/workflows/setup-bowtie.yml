@@ -12,4 +12,4 @@ jobs:
         uses: bowtie-json-schema/bowtie@v2023.05.12
 
       - name: Run Bowtie
-        run: bowtie report > report.txt | echo ${report.txt}
+        run: bowtie --version
