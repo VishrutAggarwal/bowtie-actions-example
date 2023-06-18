@@ -15,10 +15,10 @@ jobs:
         run: bowtie --version
 
       - name: Set Path
-        uses: actions/checkout
+        uses: owner/repo@ref
 
       - name: Test step
         run: echo ${{github.repository}}
 
       - name: Validate Schema
-        run: bowtie validate ${{github.repository}}/schema.json ${{github.repository}}/instance.json
+        run: bowtie validate schema.json instance.json
