@@ -10,3 +10,6 @@ jobs:
     steps:
       - name: Install Bowtie
         uses: bowtie-json-schema/bowtie@v2023.05.12
+
+      - name: Run Bowtie
+        run: bowtie help > help.txt | echo ${help.txt}
