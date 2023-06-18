@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Set Path
-        uses: ${{github.repository}}@ref
+        uses: actions/checkout
 
       - name: Validate Schema
         run: bowtie validate schema.json instance.json
