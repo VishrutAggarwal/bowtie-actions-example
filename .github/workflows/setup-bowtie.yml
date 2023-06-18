@@ -15,7 +15,7 @@ jobs:
         run: bowtie --version
 
       - name: Test step
-        run: pwd | ls
+        run: pwd
 
       - name: Validate Schema
-        run: bowtie validate ./schema.json ./instance.json
+        run: bowtie validate bowtie-actions-example/schema.json bowtie-actions-example/instance.json
