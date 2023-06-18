@@ -1,0 +1,12 @@
+name: Setup Bowtie
+run-name: ${{ github.actor }} is learning to use Bowtie
+
+on: [push]
+
+jobs:
+  sets-up-bowtie:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install Bowtie
+        uses: bowtie-json-schema/bowtie@v2023.05.12
