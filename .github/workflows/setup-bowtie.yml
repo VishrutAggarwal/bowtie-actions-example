@@ -14,11 +14,16 @@ jobs:
       - name: Run Bowtie
         run: bowtie --version
 
-      - name: Set Path
-        uses: ${{github.repository}}@ref
-
       - name: Test step
         run: echo ${{github.repository}}
+
+
+  validates-schema:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set Path
+        uses: ${{github.repository}}@ref
 
       - name: Validate Schema
         run: bowtie validate schema.json instance.json
