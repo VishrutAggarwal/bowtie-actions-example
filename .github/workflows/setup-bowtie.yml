@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout
       - name: Install Bowtie
         uses: bowtie-json-schema/bowtie@v2023.05.12
 
@@ -17,6 +18,5 @@ jobs:
       - name: Test step
         run: echo ${{github.repository}}
 
-      - uses: actions/checkout
       - name: Validate Schema
         run: bowtie validate schema.json instance.json
