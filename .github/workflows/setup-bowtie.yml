@@ -12,6 +12,7 @@ jobs:
         uses: bowtie-json-schema/bowtie@v2023.05.12
 
       - name: Run Bowtie
+        uses: actions/checkout
         run: bowtie --version
 
       - name: Test step
