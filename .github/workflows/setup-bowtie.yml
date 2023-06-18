@@ -15,4 +15,4 @@ jobs:
         run: bowtie --version
 
       - name: Validate Schema
-        run: bowtie validate schema.json instance.json
+        run: bowtie validate ./schema.json ./instance.json
