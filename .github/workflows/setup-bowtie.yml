@@ -15,7 +15,7 @@ jobs:
         run: bowtie --version
 
       - name: Set Path
-        uses: owner/repo@ref
+        uses: ${{github.repository}}@ref
 
       - name: Test step
         run: echo ${{github.repository}}
