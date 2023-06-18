@@ -14,5 +14,8 @@ jobs:
       - name: Run Bowtie
         run: bowtie --version
 
+      - name: Test step
+        run: pwd | ls
+
       - name: Validate Schema
         run: bowtie validate ./schema.json ./instance.json
