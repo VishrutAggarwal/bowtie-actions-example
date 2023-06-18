@@ -1,0 +1,48 @@
+{
+    "anyOf": [
+        {
+            "$ref": "#/definitions/Product"
+        },
+        {
+            "$ref": "#/definitions/Package"
+        }
+    ],
+    "definitions": {
+        "Product": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "name",
+                "value"
+            ]
+        },
+        "Package": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "value": {
+                    "type": "number"
+                },
+                "products": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    }
+                }
+            },
+            "required": [
+                "name",
+                "products"
+            ]
+        }
+    }
+}
