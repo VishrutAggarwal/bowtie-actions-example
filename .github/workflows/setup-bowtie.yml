@@ -13,3 +13,6 @@ jobs:
 
       - name: Run Bowtie
         run: bowtie --version
+
+      - name: Validate Schema
+        run: bowtie validate schema.json instance.json
