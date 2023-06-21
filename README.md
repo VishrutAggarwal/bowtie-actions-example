@@ -11,7 +11,7 @@ A test repository for documenting bowtie in GitHub Actions.
 
 ### Setup bowtie
 
-#### Initial Steps
+#### **Initial Steps**
 
 - Create `.github/workflows' directory in your repository.
 - Create a file with `.yml` extension.
@@ -34,7 +34,7 @@ sets-up-bowtie:
 
 _This will install bowtie every time you push onto the repository._
 
-#### Verification Steps
+#### **Verification Steps**
 
 - Append the following code in the already created YAML file:
 ```yaml
@@ -78,3 +78,38 @@ _This will help us to test if bowtie is working in the GitHub action._
 ### Validate using bowtie
 
 Now that you have successfully added bowtie to your workflow, let's work on using it to validate your JSON Specifications.
+
+#### **Add the validate command**
+
+- Add the following code snippet to your YAML file:
+```yaml
+      - name: Validate Schema
+        run: bowtie validate -i lua-jsonschema schema.json instance.json
+```
+Let's break down this command:
+
+- `bowtie validate`: It tells which command to run.
+- `-i`: It is a required flag for `validate` command and specifies which implementation to be used, which in this case is `lua-jsonschema`.
+- `schema.json`: It is the name of the file containing the defined schema against which instances will be validated.
+- `instance.json`: It is the name of the file containing the instances to be validated.
+<!-- [Please note that this can also be a directory.]-->
+
+_You will see that the implementation is skipped and thus does not validate the instances. This is because the lua implementation does not support the default 2020-12 draft._
+
+#### **Change the dialect**
+
+- To change the dialect used by the implementation, change the validate command to this:
+```yaml
+      - name: Validate Schema
+        run: bowtie validate -i lua-jsonschema --dialect 7 schema.json instance.json
+```
+_This will change the dialect used to draft 7 instead of the default 2020-12._
+
+#### **Use two implementations**
+
+- You might require using two or more different implementations for the same schema and instances. This is how you can get it done:
+```yaml
+      - name: Validate Schema
+        run: bowtie validate -i lua-jsonschema -i python-jsonschema schema.json instance.json
+```
+_Here we have used just two implementations, namely: python and lua. You may make changes according to your requirements._
