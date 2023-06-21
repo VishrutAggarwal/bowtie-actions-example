@@ -4,14 +4,22 @@ A test repository for documenting bowtie in GitHub Actions.
 
 
 ## Documentation outline
+---
 
 - Setup bowtie
+  - Initial Steps
+  - Verification Steps
 - Validate using bowtie
+  - Add the `validate` Command
+  - Change the Dialect
+  - Use Multiple Implementations
 
+<br>
 
 ### Setup bowtie
+---
 
-#### **Initial Steps**
+#### 1. **Initial Steps** 
 
 - Create `.github/workflows' directory in your repository.
 - Create a file with `.yml` extension.
@@ -34,7 +42,7 @@ sets-up-bowtie:
 
 _This will install bowtie every time you push onto the repository._
 
-#### **Verification Steps**
+#### 2. **Verification Steps**
 
 - Append the following code in the already created YAML file:
 ```yaml
@@ -76,10 +84,11 @@ bowtie, version 2023.6.4
 _This will help us to test if bowtie is working in the GitHub action._
 
 ### Validate using bowtie
+---
 
 Now that you have successfully added bowtie to your workflow, let's work on using it to validate your JSON Specifications.
 
-#### **Add the validate command**
+#### 1. **Add the `validate` Command**
 
 - Add the following code snippet to your YAML file:
 ```yaml
@@ -96,7 +105,7 @@ Let's break down this command:
 
 _You will see that the implementation is skipped and thus does not validate the instances. This is because the lua implementation does not support the default 2020-12 draft._
 
-#### **Change the dialect**
+#### 2. **Change the Dialect**
 
 - To change the dialect used by the implementation, change the validate command to this:
 ```yaml
@@ -105,7 +114,7 @@ _You will see that the implementation is skipped and thus does not validate the 
 ```
 _This will change the dialect used to draft 7 instead of the default 2020-12._
 
-#### **Use two implementations**
+#### 3. **Use Multiple Implementations**
 
 - You might require using two or more different implementations for the same schema and instances. This is how you can get it done:
 ```yaml
