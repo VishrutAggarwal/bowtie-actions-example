@@ -83,6 +83,8 @@ bowtie, version 2023.6.4
 
 _This will help us to test if bowtie is working in the GitHub action._
 
+<br>
+
 ### Validate using bowtie
 ---
 
