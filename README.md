@@ -124,3 +124,7 @@ _This will change the dialect used to draft 7 instead of the default 2020-12._
         run: bowtie validate -i lua-jsonschema -i python-jsonschema schema.json instance.json
 ```
 _Here we have used just two implementations, namely: python and lua. You may make changes according to your requirements._
+
+<br>
+
+_Note that you cannot use different dialects for different implementations in the same command, bowtie just takes the last dialect specified by using the `--dialect` flag._
