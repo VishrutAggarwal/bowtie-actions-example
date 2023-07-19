@@ -37,7 +37,7 @@ sets-up-bowtie:
 
     steps:
     - name: Install Bowtie
-        uses: bowtie-json-schema/bowtie@v2023.05.12
+      uses: bowtie-json-schema/bowtie@v2023.05.12
 ```
 
 _This will install bowtie every time you push onto the repository._
